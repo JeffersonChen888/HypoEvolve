@@ -1,0 +1,41 @@
+================================================================================
+BASELINE EVALUATION - recWXwn9v4IG9ZrM6
+Model: gpt-4o-mini
+Domain: Physics
+================================================================================
+
+QUESTION:
+Answer this scientific question by selecting the correct option (A, B, C, or D):
+
+Question: The Mott-Gurney equation describes the dark current (J) versus voltage (V) behavior of a semiconductor device in the space-charge-limited current (SCLC) regime. The equation can be expressed as
+$ J = \frac{9}{8} \epsilon \mu \frac{V^2}{L^3}$
+where $\epsilon$ is the dielectric constant, $\mu$ is the charge carrier mobility, and L is the length of the device. Which of the following statements is true about the validity of this equation?
+
+
+Options:
+A) The Mott-Gurney equation is valid for a trap-free single-carrier device with no carrier injection barrier and negligible diffusion current.
+B) The Mott-Gurney equation is valid for a single-carrier device with a Schottky contact and negligible diffusion current.
+C) The Mott-Gurney equation is valid for a two-carrier device with an Ohmic contact and negligible diffusion current.
+D) The Mott-Gurney equation is valid for a trap-free single-carrier device with an Ohmic contact and negligible drift current.
+
+You must respond in JSON format with the following structure:
+{
+  "Answer": "A or B or C or D",
+  "Reasoning": "your reasoning here"
+}
+
+================================================================================
+
+API RESPONSE:
+{
+  "Answer": "A",
+  "Reasoning": "The Mott-Gurney equation is specifically derived for a trap-free single-carrier device where the current is limited by space charge effects, and it assumes no carrier injection barrier and negligible diffusion current. This makes option A the correct statement regarding the validity of the equation."
+}
+
+================================================================================
+TOKEN_USAGE: input=353, output=69, total=422, cost=$0.000094
+PREDICTED_ANSWER: A
+CORRECT_ANSWER: A
+RESULT: CORRECT
+TIME_ELAPSED: 1.74 seconds
+================================================================================

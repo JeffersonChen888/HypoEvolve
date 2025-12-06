@@ -1,0 +1,39 @@
+================================================================================
+BASELINE EVALUATION - recypVp2NmPlBKVTp
+Model: gpt-4o-mini
+Domain: Biology
+================================================================================
+
+QUESTION:
+Answer this scientific question by selecting the correct option (A, B, C, or D):
+
+Question: There has been an outbreak of an viral infectious disease in your city. You have been asked to design a molecular diagnostic kit for quick detection of this retrovirus. How would you go about designing this kit?
+
+Options:
+A) First you identify the virus by performing cDNA sequencing.  You then develop a real time PCR kit for quick and accurate diagnosis.
+B) First you identify the virus using the information about the symptoms, provided by the affected patients. You then design a nested PCR kit based on the information for quick diagnosis.
+C) First you identify the IgG antibodies for the infection. You then develop an ELISA kit targeting IgG antibodies for quick 
+ and accurate diagnosis.
+D) First you identify the virus by performing DNA sequencing. You then develop a PCR kit for  quick and accurate diagnosis
+
+You must respond in JSON format with the following structure:
+{
+  "Answer": "A or B or C or D",
+  "Reasoning": "your reasoning here"
+}
+
+================================================================================
+
+API RESPONSE:
+{
+  "Answer": "A",
+  "Reasoning": "Retroviruses are RNA viruses, and the first step in their detection typically involves reverse transcription to create complementary DNA (cDNA). cDNA sequencing allows for the identification of the virus's genetic material, which is crucial for designing a specific real-time PCR kit. This method provides quick and accurate diagnosis, making option A the most appropriate choice."
+}
+
+================================================================================
+TOKEN_USAGE: input=289, output=83, total=372, cost=$0.000093
+PREDICTED_ANSWER: A
+CORRECT_ANSWER: A
+RESULT: CORRECT
+TIME_ELAPSED: 2.27 seconds
+================================================================================

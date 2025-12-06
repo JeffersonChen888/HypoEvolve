@@ -1,0 +1,38 @@
+================================================================================
+BASELINE EVALUATION - reczQ4I0VpENdMtIj
+Model: gpt-4o-mini
+Domain: Biology
+================================================================================
+
+QUESTION:
+Answer this scientific question by selecting the correct option (A, B, C, or D):
+
+Question: In an inactive state, a transcription factor subunit awaits an activation signal from the membrane phosphorylation cascade. Upon phosphorylation on the Ser residues in the transactivation domain, it dimerizes, shuttles into the nucleus, and serves in gene transcription. A missense mutation X in the transactivation domain is a recessive loss-of-function mutation. You observe that a heterozygous mutation Y in the dimerization domain acts as a dominant-negative mutation. Which of the following molecular phenotypes is most likely observed in the presence of mutation Y?
+
+Options:
+A) protein aggregation and loss-of-function phenotype
+B) change of protein conformation and gain-of-function phenotype
+C) loss of protein dimerization and wild-type phenotype
+D) protein degradation and loss-of-function of the wild-type allele
+
+You must respond in JSON format with the following structure:
+{
+  "Answer": "A or B or C or D",
+  "Reasoning": "your reasoning here"
+}
+
+================================================================================
+
+API RESPONSE:
+{
+  "Answer": "A",
+  "Reasoning": "A dominant-negative mutation typically interferes with the function of the wild-type protein, often leading to protein aggregation and a loss-of-function phenotype. In this case, mutation Y in the dimerization domain likely prevents proper dimerization with the wild-type subunit, resulting in a dysfunctional complex that aggregates or fails to function properly."
+}
+
+================================================================================
+TOKEN_USAGE: input=289, output=81, total=370, cost=$0.000092
+PREDICTED_ANSWER: A
+CORRECT_ANSWER: A
+RESULT: CORRECT
+TIME_ELAPSED: 3.38 seconds
+================================================================================

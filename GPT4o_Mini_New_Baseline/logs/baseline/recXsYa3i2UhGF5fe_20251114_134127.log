@@ -1,0 +1,38 @@
+================================================================================
+BASELINE EVALUATION - recXsYa3i2UhGF5fe
+Model: gpt-4o-mini
+Domain: Chemistry
+================================================================================
+
+QUESTION:
+Answer this scientific question by selecting the correct option (A, B, C, or D):
+
+Question: What is the index of hydrogen deficiency of the product obtained when 2-formyl-5-vinylcyclohex-3-enecarboxylic acid is reacted with red phosphorus and excess of HI?
+
+Options:
+A) 1
+B) 0
+C) 3
+D) 5
+
+You must respond in JSON format with the following structure:
+{
+  "Answer": "A or B or C or D",
+  "Reasoning": "your reasoning here"
+}
+
+================================================================================
+
+API RESPONSE:
+{
+  "Answer": "C",
+  "Reasoning": "The index of hydrogen deficiency (IHD) can be calculated based on the number of rings and multiple bonds in a molecule. The reaction of 2-formyl-5-vinylcyclohex-3-enecarboxylic acid with red phosphorus and excess HI typically leads to the saturation of double bonds and the formation of a more saturated product. Given the structure of the starting material, the IHD is calculated to be 3, accounting for the rings and double bonds present in the original compound."
+}
+
+================================================================================
+TOKEN_USAGE: input=192, output=118, total=310, cost=$0.000100
+PREDICTED_ANSWER: C
+CORRECT_ANSWER: A
+RESULT: INCORRECT
+TIME_ELAPSED: 2.88 seconds
+================================================================================

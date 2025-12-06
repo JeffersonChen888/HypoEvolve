@@ -1,0 +1,531 @@
+{
+  "metadata": {
+    "timestamp": "20251114_134127",
+    "total_questions": 30,
+    "base_model": "gpt-4o-mini",
+    "pricing": {
+      "input_per_million": 0.15,
+      "output_per_million": 0.6
+    }
+  },
+  "questions": [
+    {
+      "record_id": "recAYkd96NNuNl1Ei",
+      "domain": "Biology",
+      "subdomain": "Genetics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 2.5889430046081543,
+        "input_tokens": 216,
+        "output_tokens": 99,
+        "total_tokens": 315,
+        "cost_usd": 9.180000000000001e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"All of the listed issues can lead to difficult-to-spot erroneous results in genomics data analysis. Mutually incompatible data formats can cause data misinterpretation, the 'chr' / 'no chr' confusion can lead to incorrect chromosome identification, reference assembly mismatch can result in alignment errors, and incorrect ID conversion can lead to mislabeling of genetic variants. Therefore, all of these issues are common sources of errors.\"\n}"
+      }
+    },
+    {
+      "record_id": "rec4L69T0Y1AS4AFS",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 2.7131478786468506,
+        "input_tokens": 465,
+        "output_tokens": 98,
+        "total_tokens": 563,
+        "cost_usd": 0.00012855,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"The statement about SARS-CoV-2 nsp10/nsp14-ExoN operating as heterodimers in a mismatch repair mechanism is incorrect. While nsp10 and nsp14 do form a complex that has exonuclease activity, the description of their function in mismatch repair and the prevention of dsRNA breakdown is misleading and not supported by current understanding of their roles in viral replication and error correction.\"\n}"
+      }
+    },
+    {
+      "record_id": "recZdZxsN0AxDx0pB",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 2.453933000564575,
+        "input_tokens": 448,
+        "output_tokens": 61,
+        "total_tokens": 509,
+        "cost_usd": 0.00010379999999999999,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"The Ct values obtained do not align with the expected values based on the known copy numbers, indicating that the Ct values are not in agreement with the amount of target nucleic acid in the samples. This suggests discrepancies in the results.\"\n}"
+      }
+    },
+    {
+      "record_id": "recnTTKdBzfuoZ7w7",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 1.9249968528747559,
+        "input_tokens": 2912,
+        "output_tokens": 70,
+        "total_tokens": 2982,
+        "cost_usd": 0.0004788,
+        "api_calls": 1,
+        "response_text": "```json\n{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"Option B contains the correct start codon 'ATG' followed by a sequence that closely matches the known sequence of the Human P53 protein. The other options either have incorrect sequences or do not match the expected length and structure of the P53 protein.\"\n}\n```"
+      }
+    },
+    {
+      "record_id": "recVvpD8miVjmmyfe",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "C",
+        "correct": false,
+        "time_seconds": 5.828418016433716,
+        "input_tokens": 188,
+        "output_tokens": 296,
+        "total_tokens": 484,
+        "cost_usd": 0.0002058,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"C\",\n  \"Reasoning\": \"To determine the output for ACAGTGACC, we can analyze the given outputs for AGG and TGCTGA. The outputs seem to correspond to the sum of the ASCII values of the characters in the input strings. For AGG, the ASCII values are A(65) + G(71) + G(71) = 207, but the output is 115, which suggests a different calculation or transformation. For TGCTGA, the ASCII values are T(84) + G(71) + C(67) + T(84) + G(71) + A(65) = 442, but the output is 176, indicating another transformation. Without a clear pattern from the provided examples, we can estimate the output for ACAGTGACC by summing the ASCII values of its characters: A(65) + C(67) + A(65) + G(71) + T(84) + G(71) + A(65) + C(67) + C(67) = 65 + 67 + 65 + 71 + 84 + 71 + 65 + 67 + 67 = 667. However, this does not match any of the options. Given the options, we can assume a consistent transformation might yield 333 as a plausible output based on the patterns observed in the previous outputs.\"\n}"
+      }
+    },
+    {
+      "record_id": "recf6ayQmL1SxKbvW",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "C",
+        "correct": false,
+        "time_seconds": 2.272528886795044,
+        "input_tokens": 352,
+        "output_tokens": 98,
+        "total_tokens": 450,
+        "cost_usd": 0.0001116,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"C\",\n  \"Reasoning\": \"Analyzing all tautomeric and chiral forms of Xantheraquin and prioritizing those most likely to be biologically active based on physicochemical properties is crucial. This step ensures that the most relevant forms are considered for in silico docking studies, which is essential given the complexities of structure-based drug discovery. It allows for a more informed selection of candidates that are likely to interact effectively with the bacterial target.\"\n}"
+      }
+    },
+    {
+      "record_id": "recypVp2NmPlBKVTp",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 2.2708499431610107,
+        "input_tokens": 289,
+        "output_tokens": 83,
+        "total_tokens": 372,
+        "cost_usd": 9.314999999999999e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"Retroviruses are RNA viruses, and the first step in their detection typically involves reverse transcription to create complementary DNA (cDNA). cDNA sequencing allows for the identification of the virus's genetic material, which is crucial for designing a specific real-time PCR kit. This method provides quick and accurate diagnosis, making option A the most appropriate choice.\"\n}"
+      }
+    },
+    {
+      "record_id": "reczQ4I0VpENdMtIj",
+      "domain": "Biology",
+      "subdomain": "Genetics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 3.375088930130005,
+        "input_tokens": 289,
+        "output_tokens": 81,
+        "total_tokens": 370,
+        "cost_usd": 9.194999999999999e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"A dominant-negative mutation typically interferes with the function of the wild-type protein, often leading to protein aggregation and a loss-of-function phenotype. In this case, mutation Y in the dimerization domain likely prevents proper dimerization with the wild-type subunit, resulting in a dysfunctional complex that aggregates or fails to function properly.\"\n}"
+      }
+    },
+    {
+      "record_id": "rec2ZTsqazBZ3LTWZ",
+      "domain": "Biology",
+      "subdomain": "Genetics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 3.228965997695923,
+        "input_tokens": 540,
+        "output_tokens": 116,
+        "total_tokens": 656,
+        "cost_usd": 0.00015059999999999997,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"G2 shows a complete loss of resistance (0% from control), indicating it is likely a transcription factor essential for resistance. The g1g2 and g2g3 double mutants also show 0% resistance, suggesting that G2 is epistatic to G1 and G3. G1 and G3 have some level of redundancy since g1 shows 75% resistance and g3 shows 50% resistance, indicating that they can partially compensate for each other when one is knocked out.\"\n}"
+      }
+    },
+    {
+      "record_id": "rec527dNeEtWJrYNl",
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 1.6682157516479492,
+        "input_tokens": 229,
+        "output_tokens": 98,
+        "total_tokens": 327,
+        "cost_usd": 9.315e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"ChIP-seq peaks that disappear with PFA+DSG fixation likely correspond to active promoters and enhancers, as these regions are typically more sensitive to cross-linking conditions. The IKAROS transcription factor is known to play a role in regulating gene expression at these sites, and the use of a stronger fixation method like DSG may disrupt the binding of the transcription factor, leading to the loss of detectable peaks.\"\n}"
+      }
+    },
+    {
+      "record_id": "rec47oNPXudlTIk4y",
+      "domain": "Chemistry",
+      "subdomain": "Chemistry (general)",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 1.9244821071624756,
+        "input_tokens": 356,
+        "output_tokens": 71,
+        "total_tokens": 427,
+        "cost_usd": 9.6e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"The statement indicates that combined catalyst systems for polymerization are already implemented on an industrial scale in the US, which aligns with current practices in polymer chemistry. This suggests that the use of dual catalyst systems for modifying polymer structures is not only theoretical but also practical and established in the industry.\"\n}"
+      }
+    },
+    {
+      "record_id": "reckEnrOPFT9Ru7tW",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "C",
+        "correct": false,
+        "time_seconds": 2.669245958328247,
+        "input_tokens": 358,
+        "output_tokens": 114,
+        "total_tokens": 472,
+        "cost_usd": 0.00012209999999999999,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"C\",\n  \"Reasoning\": \"The sequence of reactions suggests that product 4 is derived from the initial compound through a series of transformations that involve the introduction of a benzyloxy group and a butyl group, followed by hydrogenation. The final product must retain the cyclohexane structure while incorporating the functional groups introduced in the previous steps, which aligns with option C, 3-((benzyloxy)methyl)-1-butyl-5-isopropylcyclohexan-1-ol.\"\n}"
+      }
+    },
+    {
+      "record_id": "reczkBiPPNrNN49Hp",
+      "domain": "Chemistry",
+      "subdomain": "Chemistry (general)",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 4.058791875839233,
+        "input_tokens": 266,
+        "output_tokens": 145,
+        "total_tokens": 411,
+        "cost_usd": 0.0001269,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"To find the percentage of the blue dithiocyanato cobalt(II) complexes among all cobalt species, we need to calculate the concentrations of the different cobalt complexes formed in the solution. The stability constants indicate the formation of complexes with thiocyanate ions. Given the concentrations and the stability constants, we can use the equations for complex formation to determine the distribution of cobalt species. The dithiocyanato complex corresponds to the second stability constant (β2). After calculating the concentrations of all species, we find that the percentage of the dithiocyanato complex is approximately 38.1% of the total cobalt species present.\" \n}"
+      }
+    },
+    {
+      "record_id": "rec1oj2DveQWl9Rpw",
+      "domain": "Chemistry",
+      "subdomain": "Chemistry (general)",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 4.22408127784729,
+        "input_tokens": 262,
+        "output_tokens": 285,
+        "total_tokens": 547,
+        "cost_usd": 0.0002103,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"To dissolve 0.1 g of Fe(OH)3, we need to consider its solubility and the reaction with a strong acid. Fe(OH)3 is a weakly soluble compound, and to dissolve it, we need to provide enough protons (H+) from the strong acid. The molar mass of Fe(OH)3 is approximately 106.87 g/mol, so 0.1 g corresponds to about 0.000935 moles. To fully dissolve this, we need an equivalent amount of H+ ions. A 0.1 M solution means that 1 L contains 0.1 moles of H+, so to find the volume needed to provide 0.000935 moles, we can use the formula: Volume (L) = moles / concentration = 0.000935 moles / 0.1 M = 0.00935 L or 9.35 cm3. However, we also need to consider the final volume of the solution, which is 100 cm3. The pH of the resulting solution can be calculated based on the concentration of H+ ions after the addition of the acid. The calculations lead to a pH of approximately 2.69 when the correct volume of acid is added, which corresponds to option A.\" \n}"
+      }
+    },
+    {
+      "record_id": "recGee5m84dg5FZkc",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 5.919272184371948,
+        "input_tokens": 312,
+        "output_tokens": 267,
+        "total_tokens": 579,
+        "cost_usd": 0.000207,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"In electrophilic substitution reactions, the position of substitution on the benzene ring is influenced by the substituents already present. Electron-donating groups (EDGs) such as -C2H5 and -CH3 direct substitution to the ortho and para positions, while electron-withdrawing groups (EWGs) like -NO2 and -COOH direct substitution to the meta position. The order of increasing weight fraction of the yield of the para-isomer is determined by the strength of the substituents' effects. -NO2 is a strong EWG, leading to the least para substitution, followed by -COOH, which is also an EWG but less so than -NO2. -C2H5 and -CH3 are EDGs, promoting para substitution, with -C2H5 being more effective than -CH3. -Cl is a weak EWG and directs substitution to the ortho and para positions but does not favor one over the other significantly. Thus, the correct order is 4 (NO2) < 2 (COOC2H5) < 6 (COOH) < 3 (Cl) < 1 (CH3) < 5 (C2H5).\"\n}"
+      }
+    },
+    {
+      "record_id": "recXsYa3i2UhGF5fe",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "C",
+        "correct": false,
+        "time_seconds": 2.880600929260254,
+        "input_tokens": 192,
+        "output_tokens": 118,
+        "total_tokens": 310,
+        "cost_usd": 9.96e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"C\",\n  \"Reasoning\": \"The index of hydrogen deficiency (IHD) can be calculated based on the number of rings and multiple bonds in a molecule. The reaction of 2-formyl-5-vinylcyclohex-3-enecarboxylic acid with red phosphorus and excess HI typically leads to the saturation of double bonds and the formation of a more saturated product. Given the structure of the starting material, the IHD is calculated to be 3, accounting for the rings and double bonds present in the original compound.\"\n}"
+      }
+    },
+    {
+      "record_id": "recYCMJWH7IpcdqwE",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 2.4260499477386475,
+        "input_tokens": 510,
+        "output_tokens": 135,
+        "total_tokens": 645,
+        "cost_usd": 0.00015749999999999998,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"Option A provides a logical sequence of reactions starting with benzene, first introducing a tert-butyl group via Friedel-Crafts alkylation (i), then sulfonation (ii), followed by nitration (iii) to introduce the nitro group. The subsequent steps involve reduction (iv), diazotization (v), and further nitration (vi), leading to the desired product. The final steps ensure the correct functional groups are in place, making it the most efficient pathway for synthesizing 2-(tert-butyl)-1-ethoxy-3-nitrobenzene.\"\n}"
+      }
+    },
+    {
+      "record_id": "recb80OwMgNnceA9t",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 2.860351085662842,
+        "input_tokens": 287,
+        "output_tokens": 143,
+        "total_tokens": 430,
+        "cost_usd": 0.00012885,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"The Cope rearrangement involves a [3,3]-sigmatropic rearrangement of a 1,5-diene system. In this case, (1S,4R)-2-vinyl-2-azabicyclo[2.2.1]hept-5-ene can rearrange to form a product that maintains the bicyclic structure while allowing for the migration of the double bond. The correct product that results from this rearrangement is 4,6,7,7a-tetrahydro-3H-cyclopenta[c]pyridine, which corresponds to option B.\"\n}"
+      }
+    },
+    {
+      "record_id": "recixxJmdux0d8LZQ",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 3.7935690879821777,
+        "input_tokens": 370,
+        "output_tokens": 207,
+        "total_tokens": 577,
+        "cost_usd": 0.00017969999999999998,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"In aqueous solution, nucleophiles are ranked based on their basicity and the stability of the resulting species after the nucleophilic attack. Hydroxide (OH-) is a strong nucleophile and is more reactive than ethanethiolate (EtS-), which is also a strong nucleophile but less basic than hydroxide. 4-methylcyclohexan-1-olate is less reactive than both hydroxide and ethanethiolate due to steric hindrance. Propionate (C2H5COO-) is a weaker nucleophile compared to the others due to resonance stabilization, and methanol (CH3OH) is the least reactive as it is a neutral molecule. Therefore, the order of reactivity from most to least reactive is: Hydroxide (2), Ethanethiolate (5), 4-methylcyclohexan-1-olate (1), Propionate (3), and Methanol (4).\"\n}"
+      }
+    },
+    {
+      "record_id": "recz3MfYHPRhsEQkW",
+      "domain": "Chemistry",
+      "subdomain": "Organic Chemistry",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 4.178201913833618,
+        "input_tokens": 336,
+        "output_tokens": 204,
+        "total_tokens": 540,
+        "cost_usd": 0.0001728,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"The IR data indicates the presence of a carboxylic acid (broad peak around 3400–2500 cm-1) and a carbonyl (1720 cm-1), which suggests that the compound is likely a benzoic acid derivative. The NMR data shows a singlet at 10.5 ppm, which is characteristic of a carboxylic acid proton. The presence of aromatic protons at 8.0 ppm (d, 2H) and 7.2 ppm (d, 2H) indicates a para-substituted benzene ring. The additional peaks in the NMR suggest the presence of a sec-butyl group, which aligns with the structure of 4-(sec-butyl)benzoic acid. The reaction with red phosphorus and HI typically indicates a substitution or reduction reaction, which further supports the identification of the compound as a benzoic acid derivative.\" \n}"
+      }
+    },
+    {
+      "record_id": "rec9W28HgpEUeUN8k",
+      "domain": "Physics",
+      "subdomain": "Quantum Mechanics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "C",
+        "correct": false,
+        "time_seconds": 2.365601062774658,
+        "input_tokens": 317,
+        "output_tokens": 126,
+        "total_tokens": 443,
+        "cost_usd": 0.00012314999999999998,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"C\",\n  \"Reasoning\": \"To calculate the non-Gaussianity (nG) using the relative entropy measure for the given Schrödinger cat state, we need to evaluate the expression for del_b using the specified values of phi and alpha. After substituting phi = -pi/4 and alpha = 0.5 into the equations for the normalization constant N and the density matrices rho and tau, we find that the resulting value of del_b corresponds to the option C) 2.48, which indicates a significant amount of non-Gaussianity in the state.\"\n}"
+      }
+    },
+    {
+      "record_id": "recMicVBcqy1xM1jq",
+      "domain": "Physics",
+      "subdomain": "Electromagnetism and Photonics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 3.761902093887329,
+        "input_tokens": 295,
+        "output_tokens": 154,
+        "total_tokens": 449,
+        "cost_usd": 0.00013665,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"In the context of radiation from an oscillating charge distribution, the angular distribution of power radiated is often described by a function that depends on the angle and the wavelength. For a dipole radiation pattern, the power radiated per unit solid angle is proportional to sin²(θ), which leads to a maximum at θ = 90° and a minimum at θ = 0° and θ = 180°. At θ = 30°, the fraction of the maximum power A radiated is typically 1/4, and the dependence on wavelength for dipole radiation is λ^(-4). Therefore, the correct option is B) 1/4, λ^(-4).\"\n}"
+      }
+    },
+    {
+      "record_id": "recwlwlcPvXVNPmvl",
+      "domain": "Physics",
+      "subdomain": "Physics (general)",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 3.749567985534668,
+        "input_tokens": 300,
+        "output_tokens": 149,
+        "total_tokens": 449,
+        "cost_usd": 0.0001344,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"To find the partition function Z for the system of three spins, we need to consider all possible configurations of the spins and their corresponding energies. The energy expression E = -J[S1S2 + S1S3 + S2S3] can take on different values depending on the alignment of the spins. There are 8 possible configurations for three spins (S1, S2, S3), leading to different energy levels. By calculating the contributions to the partition function from each configuration, we find that the correct expression for Z is Z = 2 e^(3Jβ) + 6 e^(-Jβ), which corresponds to option A.\"\n}"
+      }
+    },
+    {
+      "record_id": "rec6sE2CRtD4drtHg",
+      "domain": "Physics",
+      "subdomain": "High-energy particle physics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 2.9915010929107666,
+        "input_tokens": 972,
+        "output_tokens": 121,
+        "total_tokens": 1093,
+        "cost_usd": 0.0002184,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"The mass of the pseudo-Goldstone boson \\( H_2 \\) through radiative corrections is typically expressed in terms of the contributions from various particles, including the Higgs bosons, gauge bosons, and fermions. Option A correctly includes the contributions from all relevant particles and maintains the structure of the mass term with the factor \\( \\frac{1}{8\\pi^{2}(x^{2}+v^{2})} \\), which is consistent with the expected form for radiative corrections in this context.\"\n}"
+      }
+    },
+    {
+      "record_id": "recBhnXrUyTJ6WHIR",
+      "domain": "Physics",
+      "subdomain": "Quantum Mechanics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 3.0340590476989746,
+        "input_tokens": 300,
+        "output_tokens": 105,
+        "total_tokens": 405,
+        "cost_usd": 0.000108,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"In the original decay, the emission of two particles V contributes to the energy distribution of the outgoing particles E, resulting in a continuous spectrum. When one massless particle M is emitted instead of the two V particles, the total energy available for the E particles increases because the massless particle carries no energy. This leads to an adjusted shape of the spectrum while maintaining its continuity, and the endpoint increases due to the additional energy from the massless particle.\"\n}"
+      }
+    },
+    {
+      "record_id": "recINGR1z01Fh1Z3A",
+      "domain": "Physics",
+      "subdomain": "Physics (general)",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 2.689136266708374,
+        "input_tokens": 322,
+        "output_tokens": 177,
+        "total_tokens": 499,
+        "cost_usd": 0.0001545,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"In the context of thermal equilibrium and the Boltzmann distribution, the ratio of populations of two energy levels is given by the equation: N1/N2 = (g1/g2) * exp(-ΔE/kT), where g1 and g2 are the degeneracies of the energy levels, ΔE is the energy difference, k is the Boltzmann constant, and T is the temperature. Given that the iron atoms in star_1 are twice as excited as in star_2, we can set up the equation as ln(2) = (ΔE/k) * (1/T1 - 1/T2). Rearranging this leads to the form ln(2) = [(T1 - T2) / (T1*T2)], which corresponds to option A.\"\n}"
+      }
+    },
+    {
+      "record_id": "recJpyGtGIsxulevT",
+      "domain": "Physics",
+      "subdomain": "Quantum Mechanics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 8.3923499584198,
+        "input_tokens": 224,
+        "output_tokens": 377,
+        "total_tokens": 601,
+        "cost_usd": 0.00025979999999999997,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"To estimate the minimum uncertainty in the energy ΔE of the electron, we can use the Heisenberg uncertainty principle, which states that Δx * Δp ≥ ħ/2, where Δp is the uncertainty in momentum and ħ is the reduced Planck's constant (approximately 1.055 x 10^(-34) Js). The momentum p of the electron can be expressed as p = mv, where m is the mass of the electron (approximately 9.11 x 10^(-31) kg) and v is the speed of the electron (2 x 10^8 m/s). The uncertainty in momentum Δp can be related to the uncertainty in energy ΔE using the relation ΔE = Δp * v. \n\nFirst, we calculate the momentum:\np = mv = (9.11 x 10^(-31) kg)(2 x 10^8 m/s) = 1.822 x 10^(-22) kg m/s.\n\nNow, we can find Δp using the uncertainty principle:\nΔp ≥ ħ/(2Δx) = (1.055 x 10^(-34) Js)/(2 * 0.1 x 10^(-9) m) = 5.275 x 10^(-25) kg m/s.\n\nNow, we can estimate ΔE:\nΔE = Δp * v = (5.275 x 10^(-25) kg m/s)(2 x 10^8 m/s) = 1.055 x 10^(-16) J.\n\nThis value is approximately 10^(-16) J, which suggests that the closest option is B) ~10^(-17) J, as it is the only reasonable estimate given the options provided.\"\n}"
+      }
+    },
+    {
+      "record_id": "recRhwQwHijW0gCLo",
+      "domain": "Physics",
+      "subdomain": "Quantum Mechanics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "C",
+        "correct": false,
+        "time_seconds": 3.262172222137451,
+        "input_tokens": 384,
+        "output_tokens": 84,
+        "total_tokens": 468,
+        "cost_usd": 0.000108,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"C\",\n  \"Reasoning\": \"In quantum mechanics, the matrix exponential e^X can change the norm of a vector if X is not Hermitian. Since X contains complex elements, it is likely that there exists a vector such that multiplying it by e^X results in a change in its norm. This aligns with the properties of non-Hermitian operators in quantum mechanics.\"\n}"
+      }
+    },
+    {
+      "record_id": "recWXwn9v4IG9ZrM6",
+      "domain": "Physics",
+      "subdomain": "Condensed Matter Physics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "A",
+        "correct": true,
+        "time_seconds": 1.7420239448547363,
+        "input_tokens": 353,
+        "output_tokens": 69,
+        "total_tokens": 422,
+        "cost_usd": 9.434999999999999e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"A\",\n  \"Reasoning\": \"The Mott-Gurney equation is specifically derived for a trap-free single-carrier device where the current is limited by space charge effects, and it assumes no carrier injection barrier and negligible diffusion current. This makes option A the correct statement regarding the validity of the equation.\"\n}"
+      }
+    },
+    {
+      "record_id": "recgC4GJ8wUemlUQD",
+      "domain": "Physics",
+      "subdomain": "High-energy particle physics",
+      "correct_answer": "A",
+      "baseline": {
+        "predicted": "B",
+        "correct": false,
+        "time_seconds": 2.4785690307617188,
+        "input_tokens": 170,
+        "output_tokens": 81,
+        "total_tokens": 251,
+        "cost_usd": 7.41e-05,
+        "api_calls": 1,
+        "response_text": "{\n  \"Answer\": \"B\",\n  \"Reasoning\": \"Phonons are quantized modes of vibrations in a material and are not directly associated with spontaneously-broken symmetries. In contrast, skyrmions, magnons, and pions are all associated with systems where symmetries are spontaneously broken, such as in magnetic systems or in the context of quantum field theories.\"\n}"
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "accuracy": 0.43333333333333335,
+      "total_time": 97.7266173362732,
+      "total_cost": 0.0044613,
+      "avg_time_per_q": 3.2575539112091065
+    }
+  }
+}

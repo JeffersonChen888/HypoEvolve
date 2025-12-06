@@ -1,0 +1,38 @@
+================================================================================
+BASELINE EVALUATION - recgC4GJ8wUemlUQD
+Model: gpt-4o-mini
+Domain: Physics
+================================================================================
+
+QUESTION:
+Answer this scientific question by selecting the correct option (A, B, C, or D):
+
+Question: Which of the following (effective) particles is not associated with a spontaneously-broken symmetry?
+
+Options:
+A) Skyrmion
+B) Phonon
+C) Magnon
+D) Pion
+
+You must respond in JSON format with the following structure:
+{
+  "Answer": "A or B or C or D",
+  "Reasoning": "your reasoning here"
+}
+
+================================================================================
+
+API RESPONSE:
+{
+  "Answer": "B",
+  "Reasoning": "Phonons are quantized modes of vibrations in a material and are not directly associated with spontaneously-broken symmetries. In contrast, skyrmions, magnons, and pions are all associated with systems where symmetries are spontaneously broken, such as in magnetic systems or in the context of quantum field theories."
+}
+
+================================================================================
+TOKEN_USAGE: input=170, output=81, total=251, cost=$0.000074
+PREDICTED_ANSWER: B
+CORRECT_ANSWER: A
+RESULT: INCORRECT
+TIME_ELAPSED: 2.48 seconds
+================================================================================
