@@ -1,0 +1,1 @@
+# This file makes pipeline2/persistence a package. 

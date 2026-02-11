@@ -1,0 +1,17 @@
+# Core LLM APIs
+openai>=1.3.0
+google-generativeai>=0.8.0
+requests>=2.31.0  # For Ollama local API calls
+
+# Configuration and utilities
+python-dotenv>=1.0.0
+
+# Scientific computing for clustering
+numpy>=1.24.3
+scikit-learn>=1.3.0
+
+# DepMap validation and analysis
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scipy>=1.10.0

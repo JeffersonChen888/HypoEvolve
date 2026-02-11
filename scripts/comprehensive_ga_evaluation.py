@@ -13,11 +13,17 @@ Collects accuracy, time, tokens, and costs for all approaches.
 import json
 import logging
 import os
+import re
 import sys
 import time
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
+
+
+class AnswerExtractionError(Exception):
+    """Raised when answer extraction fails and we should stop processing."""
+    pass
 
 # Add pipeline3 to path
 pipeline3_dir = Path(__file__).parent.parent / "pipeline3"
@@ -39,7 +45,7 @@ except ImportError:
     raise ImportError("OpenAI package not installed. Run: pip install openai")
 
 # Set model name BEFORE importing Pipeline3 (so it reads the correct model)
-MODEL_NAME = "gpt-4o-mini"
+MODEL_NAME = "gpt-5-mini"
 os.environ['OPENAI_MODEL'] = MODEL_NAME
 
 # Import Pipeline3 modules
@@ -49,12 +55,12 @@ from pipeline3.agents.supervisor_agent import SupervisorAgent
 from pipeline3.external_tools import gpt4o
 gpt4o.MODEL_NAME = MODEL_NAME
 
-# Pricing for gpt-4o-mini (as of January 2025)
-PRICE_PER_INPUT_TOKEN_MINI = 0.15 / 1000000   # $0.15 per 1M input tokens
-PRICE_PER_OUTPUT_TOKEN_MINI = 0.60 / 1000000  # $0.60 per 1M output tokens
+# Pricing for gpt-5o-mini (as of January 2025)
+PRICE_PER_INPUT_TOKEN_MINI = 0.25 / 1000000   # $0.25 per 1M input tokens
+PRICE_PER_OUTPUT_TOKEN_MINI = 2 / 1000000  # $2 per 1M output tokens
 
 # Results directory
-RESULTS_DIR = Path("trajectories/GPQA/GPT4o_Mini_New")
+RESULTS_DIR = Path("trajectories/GPQA/GPT5_Mini_New")
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Find existing results file or create new timestamp
@@ -120,6 +126,7 @@ You must respond in JSON format with the following structure:
 }}"""
 
     # Correct answer is always A (since we put it first)
+    # YOU NEED TO CHANGE THIS PART TO RETURN THE CORRECT ANSWER FOR FULL GPQA EVALUATION
     return formatted, 'A'
 
 
@@ -317,6 +324,11 @@ def run_pipeline3_ga(question_data: Dict, num_generations: int, log_file: Option
                 'best_hypothesis': best_hypothesis,
                 'note': 'Token usage from real API logs'
             }
+
+    except AnswerExtractionError as e:
+        # Answer extraction failed - this is a critical error that should stop processing
+        logging.error(f"  GA-{num_generations}gen ANSWER EXTRACTION FAILED: {e}")
+        raise  # Re-raise to stop execution - don't silently continue with UNKNOWN
 
     except Exception as e:
         logging.error(f"  GA-{num_generations}gen failed: {e}")
@@ -533,25 +545,60 @@ def extract_answer_from_text(text: str) -> str:
     return 'UNKNOWN'
 
 
-def extract_answer_from_pipeline3_result(hypothesis: Dict) -> str:
+def extract_answer_from_pipeline3_result(hypothesis: Dict, raise_on_unknown: bool = True) -> str:
     """
     Extract answer from Pipeline3's best hypothesis.
     Searches comprehensively through all fields of the hypothesis.
+    Prioritizes the direct final_answer field (set by pipeline).
+
+    Args:
+        hypothesis: The hypothesis dictionary from Pipeline3
+        raise_on_unknown: If True, raises AnswerExtractionError when answer cannot be extracted.
+                         If False, returns 'UNKNOWN' (legacy behavior).
+
+    Returns:
+        The extracted answer letter (A, B, C, or D)
+
+    Raises:
+        AnswerExtractionError: If raise_on_unknown=True and no answer could be extracted
     """
+    if not hypothesis:
+        if raise_on_unknown:
+            raise AnswerExtractionError("Hypothesis is empty or None - cannot extract answer")
+        return 'UNKNOWN'
+
+    # FIRST: Check for direct final_answer field (most reliable - this is what pipeline sets)
+    final_answer = hypothesis.get('final_answer')
+    if final_answer:
+        answer = str(final_answer).strip().upper()
+        if len(answer) == 1 and answer in 'ABCD':
+            logging.debug(f"Found answer in final_answer field: {answer}")
+            return answer
+        # Try to extract letter from longer string
+        match = re.search(r'\b([A-D])\b', answer)
+        if match:
+            return match.group(1).upper()
+
     # Collect all text fields from the hypothesis
     text_fields = []
-    
+
     # Add title and description
     title = hypothesis.get('title', '')
     description = hypothesis.get('description', '')
     text_fields.append(title)
     text_fields.append(description)
-    
+
+    # Add summary, rationale, hypothesis_statement
+    for field in ['summary', 'rationale', 'hypothesis_statement']:
+        value = hypothesis.get(field, '')
+        if value:
+            text_fields.append(str(value))
+
     # Add testability_notes
     testability = hypothesis.get('testability_notes', '')
     if testability:
         text_fields.append(testability)
-    
+
     # Add reviews (list of strings)
     reviews = hypothesis.get('reviews', [])
     if isinstance(reviews, list):
@@ -560,22 +607,21 @@ def extract_answer_from_pipeline3_result(hypothesis: Dict) -> str:
                 text_fields.append(review)
     elif isinstance(reviews, str):
         text_fields.append(reviews)
-    
+
     # Add evolution_justification
     evolution = hypothesis.get('evolution_justification', '')
     if evolution:
         text_fields.append(evolution)
-    
+
     # Combine all text and search for answer
     combined_text = ' '.join(text_fields)
-    
+
     # First try JSON extraction (most reliable)
     answer = extract_answer_from_text(combined_text)
-    
+
     # If we got UNKNOWN, try a more aggressive search
     if answer == 'UNKNOWN':
         # Look for JSON blocks that might contain Answer field
-        import re
         # Search for any JSON-like structure with Answer field
         # This pattern handles nested JSON better
         json_pattern = r'"Answer"\s*:\s*"([A-D])"'
@@ -584,16 +630,23 @@ def extract_answer_from_pipeline3_result(hypothesis: Dict) -> str:
             # Take the last match (most recent answer)
             answer = matches[-1].upper()
             logging.debug(f"Found answer in JSON pattern: {answer}")
-    
-    # Log extraction result for debugging
+
+    # Handle extraction failure
     if answer == 'UNKNOWN':
-        logging.warning(
-            f"Could not extract answer from hypothesis. "
-            f"Title: {title[:50]}..., Description length: {len(description)}"
+        error_msg = (
+            f"Could not extract answer from hypothesis.\n"
+            f"final_answer field: {final_answer},\n"
+            f"Title: {title[:100] if title else 'None'}...,\n"
+            f"Description length: {len(description)},\n"
+            f"Text preview: {combined_text[:200] if combined_text else 'None'}..."
         )
-    else:
-        logging.debug(f"Extracted answer: {answer} from hypothesis {hypothesis.get('id', 'unknown')}")
-    
+        if raise_on_unknown:
+            raise AnswerExtractionError(error_msg)
+        else:
+            logging.warning(error_msg)
+            return 'UNKNOWN'
+
+    logging.debug(f"Extracted answer: {answer} from hypothesis {hypothesis.get('id', 'unknown')}")
     return answer
 
 

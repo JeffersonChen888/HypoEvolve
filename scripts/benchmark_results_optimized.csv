@@ -1,0 +1,5 @@
+generations,runtime_sec,final_fitness,novelty_score,mean_fitness,win_rate,framework_wins,mrr,map
+1,1482.64,,0,0,0,0,0,0
+3,3218.11,,0,0,0,0,0,0
+5,5082.31,,0,0,0,0,0,0
+10,9508.13,,0,0,0,0,0,0

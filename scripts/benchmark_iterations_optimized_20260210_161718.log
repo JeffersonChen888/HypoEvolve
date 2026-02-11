@@ -1,0 +1,292 @@
+2026-02-10 16:17:18,467 - root - INFO - STARTING OPTIMIZED BENCHMARK RUN
+2026-02-10 16:17:18,468 - root - INFO - Using configuration: generations=10, pop_size=20
+2026-02-10 16:17:18,468 - root - INFO - Loading dataset: GSE221156_pseudobulk
+2026-02-10 16:17:18,512 - root - INFO - Loaded 1 datasets
+2026-02-10 16:22:50,723 - root - INFO - Extracting druggability features for top 1000 genes...
+2026-02-10 16:22:50,725 - root - INFO - Extracting features for 1000 genes
+2026-02-10 16:23:00,263 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL033384.1
+2026-02-10 16:23:08,695 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL139246.5
+2026-02-10 16:23:09,163 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC099509.1
+2026-02-10 16:23:09,619 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL512343.2
+2026-02-10 16:23:10,074 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL356515.1
+2026-02-10 16:23:11,177 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC093866.1
+2026-02-10 16:23:12,296 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for C9orf106
+2026-02-10 16:23:14,949 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC027031.2
+2026-02-10 16:23:16,785 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC005009.1
+2026-02-10 16:23:17,232 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC020915.2
+2026-02-10 16:23:18,990 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL606807.1
+2026-02-10 16:23:21,602 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC004846.1
+2026-02-10 16:23:22,284 - utils.druggability_extractor - INFO - Processed 50/1000 genes
+2026-02-10 16:23:25,450 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL451069.1
+2026-02-10 16:23:25,926 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC105942.1
+2026-02-10 16:23:27,001 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC023983.2
+2026-02-10 16:23:27,451 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL590009.1
+2026-02-10 16:23:27,879 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC022098.1
+2026-02-10 16:23:57,182 - utils.druggability_extractor - INFO - Processed 100/1000 genes
+2026-02-10 16:24:02,989 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC244035.1
+2026-02-10 16:24:08,386 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL031848.2
+2026-02-10 16:24:10,370 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC008764.6
+2026-02-10 16:24:10,890 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL139243.1
+2026-02-10 16:24:13,340 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC012464.2
+2026-02-10 16:24:22,014 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL139089.1
+2026-02-10 16:24:30,713 - utils.druggability_extractor - INFO - Processed 150/1000 genes
+2026-02-10 16:24:31,145 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL357033.4
+2026-02-10 16:24:46,154 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC110609.1
+2026-02-10 16:24:47,320 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL360012.1
+2026-02-10 16:24:47,780 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC079209.1
+2026-02-10 16:24:50,995 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL627232.1
+2026-02-10 16:24:54,983 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP000569.1
+2026-02-10 16:24:55,431 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC025811.1
+2026-02-10 16:25:03,016 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC134312.5
+2026-02-10 16:25:04,244 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC022784.5
+2026-02-10 16:25:04,244 - utils.druggability_extractor - INFO - Processed 200/1000 genes
+2026-02-10 16:25:04,724 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC116667.1
+2026-02-10 16:25:06,524 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC004816.2
+2026-02-10 16:25:06,971 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC068888.1
+2026-02-10 16:25:09,776 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC010969.2
+2026-02-10 16:25:11,907 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL049874.3
+2026-02-10 16:25:14,124 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL353147.1
+2026-02-10 16:25:16,278 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104461.1
+2026-02-10 16:25:19,436 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC005692.1
+2026-02-10 16:25:24,559 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC010280.1
+2026-02-10 16:25:27,085 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL450313.1
+2026-02-10 16:25:32,452 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL355607.2
+2026-02-10 16:25:32,947 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC106881.1
+2026-02-10 16:25:36,939 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL354743.2
+2026-02-10 16:25:38,041 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104365.1
+2026-02-10 16:25:38,042 - utils.druggability_extractor - INFO - Processed 250/1000 genes
+2026-02-10 16:25:38,493 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104051.2
+2026-02-10 16:25:40,450 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC012150.1
+2026-02-10 16:25:46,095 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL133268.3
+2026-02-10 16:25:49,384 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC020743.2
+2026-02-10 16:25:51,142 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC016383.1
+2026-02-10 16:25:52,221 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001266.2
+2026-02-10 16:25:56,584 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC092805.1
+2026-02-10 16:25:57,024 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP006748.2
+2026-02-10 16:25:57,502 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL139327.2
+2026-02-10 16:25:58,011 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC068787.2
+2026-02-10 16:25:58,496 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC114798.1
+2026-02-10 16:25:58,927 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC092053.5
+2026-02-10 16:25:59,375 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC004828.1
+2026-02-10 16:25:59,827 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC011243.1
+2026-02-10 16:26:00,354 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC013286.1
+2026-02-10 16:26:02,163 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC008877.1
+2026-02-10 16:26:03,254 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL121977.2
+2026-02-10 16:26:03,697 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC069410.1
+2026-02-10 16:26:04,132 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC018450.2
+2026-02-10 16:26:08,877 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC243829.5
+2026-02-10 16:26:10,190 - utils.druggability_extractor - INFO - Processed 300/1000 genes
+2026-02-10 16:26:46,617 - utils.druggability_extractor - INFO - Processed 350/1000 genes
+2026-02-10 16:27:23,084 - utils.druggability_extractor - INFO - Processed 400/1000 genes
+2026-02-10 16:27:59,309 - utils.druggability_extractor - INFO - Processed 450/1000 genes
+2026-02-10 16:28:26,182 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104072.1
+2026-02-10 16:28:28,012 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL359475.1
+2026-02-10 16:28:32,870 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP000894.2
+2026-02-10 16:28:34,963 - utils.druggability_extractor - INFO - Processed 500/1000 genes
+2026-02-10 16:28:36,347 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC026402.2
+2026-02-10 16:28:38,285 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC105230.1
+2026-02-10 16:28:40,306 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC092809.4
+2026-02-10 16:28:40,831 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC097625.1
+2026-02-10 16:28:41,341 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL009181.1
+2026-02-10 16:28:44,713 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC107373.2
+2026-02-10 16:28:46,634 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC005083.1
+2026-02-10 16:28:49,926 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC090517.5
+2026-02-10 16:28:53,453 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL359208.1
+2026-02-10 16:28:53,933 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001107.9
+2026-02-10 16:28:56,610 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC011611.4
+2026-02-10 16:28:57,710 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL157936.1
+2026-02-10 16:29:00,101 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC138696.2
+2026-02-10 16:29:01,164 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL356215.1
+2026-02-10 16:29:02,313 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC004130.2
+2026-02-10 16:29:02,770 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL136295.2
+2026-02-10 16:29:05,218 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC009831.1
+2026-02-10 16:29:05,651 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104667.2
+2026-02-10 16:29:06,137 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC008972.2
+2026-02-10 16:29:06,139 - utils.druggability_extractor - INFO - Processed 550/1000 genes
+2026-02-10 16:29:07,234 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC008972.1
+2026-02-10 16:29:12,798 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for ACTA2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:29:15,491 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL161910.1
+2026-02-10 16:29:17,407 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL135905.1
+2026-02-10 16:29:18,624 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC093512.1
+2026-02-10 16:29:19,896 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for U73166.1
+2026-02-10 16:29:26,135 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP000356.2
+2026-02-10 16:29:26,595 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC023283.1
+2026-02-10 16:29:28,528 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC116312.1
+2026-02-10 16:29:37,589 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC096564.2
+2026-02-10 16:29:38,077 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC092134.3
+2026-02-10 16:29:39,445 - utils.druggability_extractor - INFO - Processed 600/1000 genes
+2026-02-10 16:29:40,039 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC005277.2
+2026-02-10 16:29:40,655 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL033380.1
+2026-02-10 16:29:43,289 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC090510.1
+2026-02-10 16:29:43,840 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC090398.2
+2026-02-10 16:29:44,318 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL139384.2
+2026-02-10 16:29:47,706 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC091982.3
+2026-02-10 16:29:51,658 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL161729.1
+2026-02-10 16:29:52,111 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL356488.3
+2026-02-10 16:29:59,050 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC097478.1
+2026-02-10 16:30:03,224 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC022613.1
+2026-02-10 16:30:04,475 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL118511.1
+2026-02-10 16:30:08,049 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC062029.1
+2026-02-10 16:30:10,677 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC096711.1
+2026-02-10 16:30:11,113 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL353138.1
+2026-02-10 16:30:13,528 - utils.druggability_extractor - INFO - Processed 650/1000 genes
+2026-02-10 16:30:13,956 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC244517.5
+2026-02-10 16:30:15,920 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL596330.2
+2026-02-10 16:30:17,185 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC120498.4
+2026-02-10 16:30:18,334 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC090587.1
+2026-02-10 16:30:18,815 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL157394.3
+2026-02-10 16:30:21,626 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC096577.1
+2026-02-10 16:30:29,985 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC092376.2
+2026-02-10 16:30:31,185 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC018553.1
+2026-02-10 16:30:31,652 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC073270.2
+2026-02-10 16:30:33,567 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL035425.3
+2026-02-10 16:30:38,511 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AF131216.4
+2026-02-10 16:30:44,036 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC079385.2
+2026-02-10 16:30:44,485 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC005592.1
+2026-02-10 16:30:47,534 - utils.druggability_extractor - INFO - Processed 700/1000 genes
+2026-02-10 16:30:49,481 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104472.5
+2026-02-10 16:30:50,584 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC091181.2
+2026-02-10 16:30:53,128 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC134349.1
+2026-02-10 16:30:53,590 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL391883.1
+2026-02-10 16:30:58,557 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL121933.2
+2026-02-10 16:31:04,617 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC025257.1
+2026-02-10 16:31:09,290 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC104170.1
+2026-02-10 16:31:11,879 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC096772.1
+2026-02-10 16:31:14,412 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC007405.2
+2026-02-10 16:31:18,409 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001922.6
+2026-02-10 16:31:20,226 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC132217.2
+2026-02-10 16:31:20,226 - utils.druggability_extractor - INFO - Processed 750/1000 genes
+2026-02-10 16:31:28,487 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for LINC00545
+2026-02-10 16:31:32,495 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC092718.5
+2026-02-10 16:31:33,632 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL122008.3
+2026-02-10 16:31:36,766 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC009126.1
+2026-02-10 16:31:41,507 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC005746.2
+2026-02-10 16:31:42,612 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL136962.1
+2026-02-10 16:31:43,752 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL133346.1
+2026-02-10 16:31:46,248 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for FO704657.1
+2026-02-10 16:31:53,032 - utils.druggability_extractor - INFO - Processed 800/1000 genes
+2026-02-10 16:31:56,442 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for LINC02634
+2026-02-10 16:31:58,219 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL355597.1
+2026-02-10 16:32:04,638 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC245008.1
+2026-02-10 16:32:05,905 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC009950.1
+2026-02-10 16:32:18,787 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC002480.2
+2026-02-10 16:32:22,022 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC012085.2
+2026-02-10 16:32:23,216 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC022075.1
+2026-02-10 16:32:24,340 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC022201.2
+2026-02-10 16:32:25,489 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC002467.1
+2026-02-10 16:32:26,835 - utils.druggability_extractor - INFO - Processed 850/1000 genes
+2026-02-10 16:32:27,303 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for UBR5-AS1
+2026-02-10 16:32:32,101 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC009041.2
+2026-02-10 16:32:35,402 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001057.1
+2026-02-10 16:32:41,133 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001453.2
+2026-02-10 16:32:41,569 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001885.2
+2026-02-10 16:32:41,999 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC018742.1
+2026-02-10 16:32:42,442 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC012354.1
+2026-02-10 16:32:44,915 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL450267.2
+2026-02-10 16:32:45,385 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AP001001.1
+2026-02-10 16:32:46,501 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC072054.1
+2026-02-10 16:32:47,588 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC106897.1
+2026-02-10 16:32:49,475 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL353688.1
+2026-02-10 16:32:52,011 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC132938.3
+2026-02-10 16:32:53,248 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for SAMD12-AS1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:32:53,737 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for DLEU7: 'NoneType' object has no attribute 'get'
+2026-02-10 16:32:54,157 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for RTL6: 'NoneType' object has no attribute 'get'
+2026-02-10 16:32:54,604 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AL158206.1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:32:55,114 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for MMD: 'NoneType' object has no attribute 'get'
+2026-02-10 16:32:57,183 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC010255.1
+2026-02-10 16:32:57,186 - utils.druggability_extractor - INFO - Processed 900/1000 genes
+2026-02-10 16:32:59,214 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC024940.6
+2026-02-10 16:33:00,408 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC093599.2
+2026-02-10 16:33:05,066 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC023043.1
+2026-02-10 16:33:06,146 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC100803.2
+2026-02-10 16:33:09,213 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC016597.2
+2026-02-10 16:33:09,648 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC009951.6
+2026-02-10 16:33:10,727 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for C5orf56
+2026-02-10 16:33:18,648 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC018545.1
+2026-02-10 16:33:19,086 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC079177.1
+2026-02-10 16:33:19,536 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC006059.1
+2026-02-10 16:33:22,064 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC037198.2
+2026-02-10 16:33:23,352 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for HOXB2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:23,771 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for CATSPERZ: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:24,214 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for SS18L2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:24,661 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for BAALC-AS2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:25,094 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for RPE: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:25,555 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AC116407.2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:25,992 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for OXR1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:26,446 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for LAMTOR4: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:26,883 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for ETAA1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:26,884 - utils.druggability_extractor - INFO - Processed 950/1000 genes
+2026-02-10 16:33:27,339 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for CNTN5: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:27,780 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AC098487.1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:28,218 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for KMT2E: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:28,649 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for VIM-AS1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:29,073 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for STARD7: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:29,537 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for CYP1B1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:29,963 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for SGPL1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:30,407 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for ITPA: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:30,826 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AC009133.1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:31,254 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for BLOC1S4: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:31,767 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AC016727.1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:32,346 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for HSPB1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:32,887 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for UGP2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:33,436 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for RAB20: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:33,878 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for MICOS10: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:34,338 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for IRS1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:34,811 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for RAB9A: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:35,255 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for COL6A1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:35,687 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for RHOF: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:36,114 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AC010624.2: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:36,543 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for PPIA: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:36,974 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for U47924.1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:37,400 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for CMTM3: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:37,816 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for AC068587.4: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:38,238 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for FADS6: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:38,685 - utils.druggability_extractor - ERROR - Error fetching Ensembl ID for WDSUB1: 'NoneType' object has no attribute 'get'
+2026-02-10 16:33:40,509 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC099332.1
+2026-02-10 16:33:41,600 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC069281.1
+2026-02-10 16:33:42,033 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL035665.1
+2026-02-10 16:33:43,798 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL034346.1
+2026-02-10 16:33:44,903 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AC090340.1
+2026-02-10 16:33:45,358 - utils.druggability_extractor - WARNING - Could not find Ensembl ID for AL590714.1
+2026-02-10 16:33:53,473 - utils.druggability_extractor - INFO - Processed 1000/1000 genes
+2026-02-10 16:33:53,486 - utils.druggability_extractor - INFO - Created druggability feature DataFrame with 1000 genes
+2026-02-10 16:33:53,486 - root - INFO - Druggability extraction complete: 1000 genes
+2026-02-10 16:33:53,491 - root - INFO - Running leakage tests on druggability features...
+2026-02-10 16:33:53,491 - utils.leakage_tester - INFO - Running single feature uniqueness tests...
+2026-02-10 16:33:53,493 - utils.leakage_tester - INFO - Feature 'idg_family': uniqueness=0.009, singletons=0.000, safe=True
+2026-02-10 16:33:53,493 - utils.leakage_tester - INFO - Feature 'subcellular_location': uniqueness=0.005, singletons=0.000, safe=True
+2026-02-10 16:33:53,493 - utils.leakage_tester - INFO - Running combination uniqueness tests...
+2026-02-10 16:33:53,499 - utils.leakage_tester - INFO - All leakage tests PASSED - safe to use Option A
+2026-02-10 16:33:53,500 - root - INFO - 
+============================================================
+LEAKAGE TEST REPORT
+============================================================
+
+Overall Status: PASSED ✓
+
+----------------------------------------
+Single Feature Tests:
+----------------------------------------
+  idg_family: ✓
+    - Uniqueness: 0.009
+    - Singletons: 0.000
+  subcellular_location: ✓
+    - Uniqueness: 0.005
+    - Singletons: 0.000
+
+----------------------------------------
+Combination Tests:
+----------------------------------------
+  All combinations safe ✓
+
+----------------------------------------
+LLM Leakage Test:
+----------------------------------------
+  Skipped: Missing data or LLM client
+
+
+============================================================
+2026-02-10 16:33:53,500 - root - INFO - ============================================================
+2026-02-10 16:33:53,500 - root - INFO - STARTING T2D EVOLUTIONARY OPTIMIZATION
+2026-02-10 16:33:53,500 - root - INFO - Generations: 10, Population: 20
+2026-02-10 16:33:53,500 - root - INFO - ============================================================
