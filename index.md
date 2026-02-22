@@ -57,9 +57,6 @@ The system has four AI agents:
 
 The process repeats across generations, steadily improving hypothesis quality.
 
-<details>
-<summary>🔎 Click to View Technical Details</summary>
-
 ### Optimization Objective
 
 We search for:
@@ -93,8 +90,6 @@ External validation uses:
 * Threshold for “Excellent” ≥ 0.9
 
 DepMap data is never used during evolution.
-
-</details>
 
 ## Application: Drug Repurposing for Cancer
 
