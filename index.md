@@ -1,9 +1,25 @@
+---
+layout: default
+---
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
 # HypoEvolve: Benchmarking LLM-Generated Biological Hypotheses for Scientific Discovery
 
-Jefferson Chen, Samuel Lee, Zhiting Hu, Zhen Wang
+Jefferson Chen, Samuel Lee, Jieyuan Liu, Zhiting Hu, Zhen Wang
 
 [jec068@ucsd.edu](mailto:jec068@ucsd.edu)
 [hsl023@ucsd.edu](mailto:hsl023@ucsd.edu)
+[jil029@ucsd.edu](mailto:jil029@ucsd.edu)
 [zhh019@ucsd.edu](mailto:zhh019@ucsd.edu)
 [zhw085@ucsd.edu](mailto:zhw085@ucsd.edu)
 
@@ -61,11 +77,15 @@ The process repeats across generations, steadily improving hypothesis quality.
 
 We search for:
 
-$$h* = argmax f(h)$$
+$$
+h* = argmax f(h)
+$$
 
 Where hypothesis quality is:
 
-$$f(h) = w_c s_c + w_n s_n + w_q s_q$$
+$$
+f(h) = w_c s_c + w_n s_n + w_q s_q
+$$
 
 * $s_c$: correctness
 * $s_n$: novelty
