@@ -68,15 +68,11 @@ The process repeats across generations, steadily improving hypothesis quality.
 
 We search for:
 
-$$
-h* = argmax f(h)
-$$
+$h* = argmax f(h)$
 
 Where hypothesis quality is:
 
-$$
-f(h) = w_c s_c + w_n s_n + w_q s_q
-$$
+$f(h) = w_c s_c + w_n s_n + w_q s_q$
 
 * $s_c$: correctness
 * $s_n$: novelty
