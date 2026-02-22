@@ -1,23 +1,155 @@
-# DSC180A-Methodology-4
+# HypoEvolve: Benchmarking LLM-Generated Biological Hypotheses for Scientific Discovery
 
-Name: Samuel Lee
-Email: <hsl023@ucsd.edu>
+Jefferson Chen, Samuel Lee, Zhiting Hu, Zhen Wang
 
-Section: A08
-Mentors: Zhiting Hu, Zhen Wang, Kun Zhou
+[jec068@ucsd.edu](mailto:jec068@ucsd.edu)
+[hsl023@ucsd.edu](mailto:hsl023@ucsd.edu)
+[zhh019@ucsd.edu](mailto:zhh019@ucsd.edu)
+[zhw085@ucsd.edu](mailto:zhw085@ucsd.edu)
 
-**What is the most interesting topic covered in your domain this quarter?**
+University of California, San Diego
 
-The most interesting topic this quarter was Weak-to-Strong Generalization. This involves training or guiding stronger models using feedback or examples from weaker models. I found it interesting because it shows how small, imperfect signals can still guide large models toward improved reasoning and decision-making.
+## Why This Matters
 
-**Describe a potential investigation you would like to pursue for your Quarter 2 Project.**
+Scientific discovery depends on generating and refining hypotheses.
+Traditionally, researchers:
 
-For Quarter 2, I would like to explore AI for AI research automation. Our mentors gave us several papers to read in the first few weeks, and I am most interested in this topic. In the paper FIRE-Bench, their benchmark reframes evaluation by asking agents to verify the rediscovery of well-known scientific findings from recent, important ML research. I would also like to conduct a similar project in Quarter 2.
+1. Propose ideas
+2. Critique them
+3. Combine promising mechanisms
+4. Improve them over time
 
-**What is a potential change you’d make to the approach taken in your current Quarter 1 Project?**
+However, most AI systems today generate **one answer at a time**. They don’t revise, compare, or evolve ideas the way scientists do.
 
-In Quarter 1, I mainly focused on comparing the performance of weak and strong models by fine-tuning parameters and using the Performance Gain Ratio (PGR) metric. For the next stage, I want to go beyond just evaluating static metrics. I plan to include multi-turn supervision, where the strong model improves its answers based on weak feedback. This change will make the setup more interactive and better reflect real-world dynamics.
+We asked:
 
-**What other techniques would you be interested in using in your project?**
+> What if AI could *evolve* hypotheses the way nature evolves organisms?
 
-I want to include in-context learning, reward-model distillation, and reinforcement learning from human feedback (RLHF) techniques. RLHF would naturally expand W2S by allowing weak or proxy feedback models to act as substitutes for human preference models, which would convert qualitative feedback into quantitative reward signals. Combining this with in-context learning and representation analysis, like probing or CCA, would help uncover how alignment behaviors and reasoning skills develop under weak or indirect supervision.
+We proposed **HypoEvolve**, a system that combines large language models (LLMs) with evolutionary algorithms to iteratively refine scientific ideas.
+
+## What We Built
+
+HypoEvolve is a multi-agent AI system that:
+
+* Generates scientific hypotheses
+* Evaluates them systematically
+* Selects the strongest ideas
+* Combines and mutates them
+* Repeats the process over generations
+
+![framework](/assets/fig_framework.png)
+
+## How It Works (High-Level)
+
+The system has four AI agents:
+
+1. **Generation Agent**
+   Produces diverse hypotheses grounded in literature.
+
+2. **Reflection Agent**
+   Scores ideas for correctness, novelty, and quality.
+
+3. **Evolution Agent**
+   Combines strong ideas (crossover) and introduces variations (mutation).
+
+4. **Supervisor Agent**
+   Manages selection and preserves the best hypotheses.
+
+The process repeats across generations, steadily improving hypothesis quality.
+
+<details>
+<summary>🔎 Click to View Technical Details</summary>
+
+### Optimization Objective
+
+We search for:
+
+$$h* = argmax f(h)$$
+
+Where hypothesis quality is:
+
+$$f(h) = w_c s_c + w_n s_n + w_q s_q$$
+
+* $s_c$: correctness
+* $s_n$: novelty
+* $s_q$: quality
+* weights emphasize novelty and overall quality
+
+### Evolution Loop
+
+For each generation:
+
+1. Structured peer review
+2. Tournament selection
+3. Crossover of parent hypotheses
+4. Mutation (simplification or out-of-box reasoning)
+5. Elitism-based replacement
+
+### Evaluation
+
+External validation uses:
+
+* DepMap CRISPR gene dependency scores
+* Threshold for “Excellent” ≥ 0.9
+
+DepMap data is never used during evolution.
+
+</details>
+
+## Application: Drug Repurposing for Cancer
+
+To test our system, we applied it to a real biomedical task:
+
+> Given a cancer type, can AI propose an FDA-approved drug that might work and explain why?
+
+The system:
+
+* Proposes a drug
+* Explains the biological mechanism
+* Predicts relevance to disease biology
+
+We evaluated results using **DepMap CRISPR knockout data**, an independent biological dataset that was *never shown* to the AI during training or evolution.
+
+## Results
+
+| Method          | Excellent Rate | Avg Score |
+| --------------- | -------------- | ----------|
+| Single-pass LLM | 42%            | 56.3%     |
+| **HypoEvolve**  | **84%**        | **93.6%** |
+
+Key findings:
+
+* Excellent predictions doubled
+* Validation scores increased dramatically
+* Improvements were statistically significant (p < 0.00001)
+* Gains generalized across 31 cancer types
+
+![results](/assets/fig_summary.png)
+
+In addition, the figure below indicates that internal LLM-evaluated fitness improves consistently across generations. The strongest gains occur in early generations, with elitism preserving high-quality hypotheses while mutation maintains diversity.
+
+![learning_curve](/assets/fig_learning_curve.png)
+
+## Discussion
+
+This work suggests:
+
+* Iterative refinement improves AI scientific reasoning
+* Evolutionary search helps avoid one-shot hallucinations
+* Population-based optimization can meaningfully guide hypothesis discovery
+
+More broadly, AI systems may benefit from evolutionary pressure rather than relying solely on single prompts.
+
+This framework could extend to:
+
+* Biomedical discovery
+* Materials science
+* Climate modeling
+* Mechanistic reasoning tasks
+
+## Future Directions
+
+* Integrate knowledge graphs into evolution
+* Improve fitness evaluation beyond LLM scoring
+* Apply to broader disease domains
+* Incorporate experimental feedback loops
