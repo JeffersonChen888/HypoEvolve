@@ -2,58 +2,54 @@
 layout: default
 ---
 
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(','\\)'], ['$', '$']],
+      displayMath: [['$$','$$']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 # HypoEvolve: Benchmarking LLM-Generated Biological Hypotheses for Scientific Discovery
 
 Jefferson Chen, Samuel Lee, Jieyuan Liu, Zhiting Hu, Zhen Wang  
 University of California, San Diego  
 
-jec068@ucsd.edu  
-hsl023@ucsd.edu  
-jil029@ucsd.edu  
-zhh019@ucsd.edu  
-zhw085@ucsd.edu  
+[jec068@ucsd.edu](mailto:jec068@ucsd.edu)  
+[hsl023@ucsd.edu](mailto:hsl023@ucsd.edu)  
+[jil029@ucsd.edu](mailto:jil029@ucsd.edu)  
+[zhh019@ucsd.edu](mailto:zhh019@ucsd.edu)  
+[zhw085@ucsd.edu](mailto:zhw085@ucsd.edu)  
 
----
+## Why This Matters
 
-## Elevator Pitch
+Scientific discovery is not a straight path. Researchers propose ideas, critique weaknesses, combine complementary mechanisms, and refine explanations over time. Most current AI systems do not follow this approach. They provide a single response and stop.
 
-HypoEvolve improves the quality of AI-generated biological hypotheses by introducing evolutionary refinement into large language model reasoning. Instead of generating a single answer per prompt, our system maintains a population of candidate hypotheses that are evaluated, selected, recombined, and mutated across generations. On a real-world drug repurposing task spanning 31 cancer types, this evolutionary process doubled the rate of externally validated “excellent” predictions compared to a standard single-pass LLM.
+This one-time output limits reliability. Even if the results seem valid, they may lack biological grounding. Without comparison, revision, or selection, there is no way to improve.
 
----
+HypoEvolve asks a simple question: what if AI could evolve hypotheses like biological systems evolve organisms?
 
-# Why This Matters
+## What We Built
 
-Scientific discovery is inherently iterative. Researchers propose ideas, critique weaknesses, merge complementary mechanisms, and refine explanations over time. Most current AI systems do not replicate this process. They produce a single response and stop.
-
-This one-shot behavior limits reliability. Even when outputs are plausible, they may lack biological grounding. Without comparison, revision, or selection, there is no mechanism for improvement.
-
-HypoEvolve asks a simple question: what if AI systems could evolve hypotheses the way biological systems evolve organisms?
-
----
-
-# What We Built
-
-We designed a multi-agent evolutionary framework for hypothesis refinement. The system generates a population of literature-grounded hypotheses, evaluates their quality, and applies evolutionary operators to improve them over successive generations.
+We created a multi-agent evolutionary framework for refining hypotheses. The system generates a group of literature-based hypotheses, assesses their quality, and applies evolutionary processes to improve them across generations.
 
 ![Framework overview of the multi-agent evolutionary hypothesis refinement process.](/assets/fig_framework.png)
 
-The architecture contains four interacting agents. A Generation Agent proposes diverse candidate hypotheses. A Reflection Agent evaluates each hypothesis for biological correctness, novelty, and explanatory quality. An Evolution Agent performs crossover and mutation, combining strong ideas and introducing structured variation. Finally, a Supervisor Agent manages tournament selection and elitism, ensuring that high-performing hypotheses persist across generations.
+The framework includes four interacting agents. A Generation Agent suggests diverse candidate hypotheses. A Reflection Agent checks each hypothesis for biological accuracy, novelty, and explanatory quality. An Evolution Agent mixes and mutates ideas, combining strong concepts and adding variety. Finally, a Supervisor Agent oversees tournament selection and elitism, making sure that the best hypotheses carry on through generations.
 
-This process repeats iteratively, allowing the population to improve over time rather than relying on a single attempt.
+This process works iteratively, allowing the population to improve over time instead of relying on one attempt.
 
----
+## Scope and Boundaries
 
-# Scope and Boundaries
+This project focuses on testing evolutionary refinement for AI-generated biomedical hypotheses. We use crossover and mutation processes, structured multi-agent evaluation, and external validation with an independent biological dataset. We assess performance on a drug repurposing task across 31 cancer types.
 
-This project focuses on benchmarking evolutionary refinement for AI-generated biomedical hypotheses. We implement crossover and mutation operators, structured multi-agent evaluation, and external validation using an independent biological dataset. We evaluate performance on a drug repurposing task across 31 cancer types.
+We do not perform wet-lab validation, fine-tune base models, or claim readiness for clinical use. Our goal is methodological: to investigate whether evolutionary pressure enhances AI hypothesis quality.
 
-We do not conduct wet-lab validation, fine-tune foundation models, or claim clinical deployment readiness. Our goal is methodological: to test whether evolutionary pressure improves AI hypothesis quality.
+## Optimization Objective
 
----
-
-# Optimization Objective
-
-We formalize hypothesis search as:
+We define the hypothesis search as:
 
 $$
 h^* = \arg\max_h f(h)
@@ -65,31 +61,25 @@ $$
 f(h) = w_c s_c + w_n s_n + w_q s_q
 $$
 
-Here, \( s_c \) measures biological correctness, \( s_n \) measures novelty, and \( s_q \) measures explanation quality. The weighting emphasizes novelty and robustness while maintaining biological plausibility.
+Here, \( s_c \) measures biological accuracy, \( s_n \) measures novelty, and \( s_q \) measures explanatory quality. The weighting prioritizes novelty and robustness while keeping biological plausibility.
 
-Across generations, hypotheses with higher fitness are more likely to survive and recombine.
+Over generations, hypotheses with better fitness are more likely to survive and be combined.
 
----
+## Application: Drug Repurposing for Cancer
 
-# Application: Drug Repurposing for Cancer
+To test the framework, we apply it to a real biomedical task: given a cancer type, suggest an FDA-approved drug and provide a mechanistic explanation for its potential effectiveness.
 
-To evaluate the framework, we apply it to a practical biomedical task: given a cancer type, propose an FDA-approved drug and provide a mechanistic explanation for its potential effectiveness.
+Each hypothesis includes a drug, a target pathway or gene, and a structured biological rationale. The system does not receive outcome labels during evolution.
 
-Each hypothesis consists of a drug, a target pathway or gene, and a structured biological rationale. The system does not receive outcome labels during evolution.
+## External Validation Using DepMap
 
----
+We assess hypotheses using CRISPR gene dependency data from the Broad Institute’s DepMap project. For each proposed mechanism, we check if the implicated gene shows strong dependency in the relevant cancer context.
 
-# External Validation Using DepMap
+A hypothesis is classified as “Excellent” if its validation score exceeds 0.9. Importantly, we do not use DepMap data during hypothesis generation or scoring. It is only for external evaluation, preventing data leakage.
 
-We evaluate hypotheses using CRISPR gene dependency data from the Broad Institute’s DepMap project. For each proposed mechanism, we measure whether the implicated gene demonstrates strong dependency in the relevant cancer context.
+This ensures that improvements reflect true generalization instead of overfitting.
 
-A hypothesis is classified as “Excellent” if its validation score exceeds 0.9. Importantly, DepMap data is never used during hypothesis generation or evolutionary scoring. It is strictly reserved for external evaluation, preventing data leakage.
-
-This ensures that improvements reflect genuine generalization rather than overfitting.
-
----
-
-# Results
+## Results
 
 | Method          | Excellent Rate | Avg Score |
 |----------------|---------------|-----------|
@@ -98,66 +88,49 @@ This ensures that improvements reflect genuine generalization rather than overfi
 
 ![Comparison between single-pass LLM and HypoEvolve across 31 cancer types.](/assets/fig_summary.png)
 
-HypoEvolve doubles the rate of externally validated excellent predictions and dramatically increases average validation scores. The improvement is statistically significant (p < 0.00001) and consistent across 31 cancer types.
+HypoEvolve doubles the rate of externally validated excellent predictions and significantly increases average validation scores. The improvement is statistically meaningful (p < 0.00001) and consistent across all 31 cancer types.
 
-The learning curve below shows that internal fitness improves rapidly during early generations and stabilizes as high-quality hypotheses are preserved through elitism.
+The learning curve below shows that internal fitness increases quickly during early generations and stabilizes as high-quality hypotheses are preserved through elitism.
 
 ![Learning curve showing hypothesis fitness improvement across generations.](/assets/fig_learning_curve.png)
 
----
+## Interpreting the Results
 
-# Interpreting the Results
+The increase in the Excellent Rate suggests better biological alignment with independent gene dependency data. Early generations remove weak or biologically inconsistent mechanisms, while later generations refine and stabilize high-performing hypotheses.
 
-The increase in Excellent Rate indicates stronger biological alignment with independent gene dependency data. Early generations eliminate weak or biologically inconsistent mechanisms, while later generations refine and stabilize high-performing hypotheses.
+Since evaluation data is not used during evolution, performance gains reflect improved hypothesis structure rather than memorization.
 
-Because evaluation data is never used during evolution, performance gains reflect improved hypothesis structure rather than memorization.
+## What Changes Across Generations?
 
----
+Evolution mainly enhances three properties. First, biologically inconsistent explanations are quickly eliminated. Second, crossover introduces reasoning between pathways that single-pass outputs miss. Third, mutation simplifies overly complex mechanisms, often improving plausibility. Together, these processes lower the risk of errors and improve consistency.
 
-# What Changes Across Generations?
+## Limitations
 
-Evolution primarily improves three properties. First, biologically inconsistent explanations are rapidly removed. Second, crossover introduces cross-pathway reasoning that does not appear in single-pass outputs. Third, mutation simplifies overly complex mechanisms, often increasing plausibility.
+Fitness evaluation relies partly on LLM-based scoring, which may introduce bias. DepMap measures gene dependency rather than full mechanistic correctness, so validation is inherently indirect. The depth of evolution is limited by computational resources, and biological novelty is hard to measure objectively. Additionally, our experiments focus solely on oncology; other fields still need testing.
 
-Together, these processes reduce hallucination risk and improve consistency.
+Future improvements may include using structured biomedical knowledge graphs and incorporating experimental feedback loops.
 
----
+## Contributions
 
-# Limitations
+This project presents a population-based evolutionary framework for refining AI-generated scientific hypotheses. We define hypothesis fitness optimization, demonstrate statistically significant improvements with independent biological validation, and provide a reproducible benchmarking process for hypothesis evolution.
 
-Fitness evaluation partially relies on LLM-based scoring, which may introduce bias. DepMap measures gene dependency rather than complete mechanistic correctness, so validation is necessarily indirect. Evolution depth is constrained by computational resources, and biological novelty remains difficult to quantify objectively. Finally, experiments are limited to oncology; broader domains remain to be tested.
+More broadly, we show that evolutionary pressure can significantly enhance AI scientific reasoning beyond single-prompt generation.
 
-Future improvements include integrating structured biomedical knowledge graphs and incorporating experimental feedback loops.
+## Broader Implications
 
----
+HypoEvolve indicates a shift from prompt engineering to population-based reasoning systems. Rather than searching for the ideal prompt, systems might benefit from iterative selection and recombination.
 
-# Contributions
+This approach applies beyond oncology to other fields needing mechanistic reasoning, including materials science, climate modeling, and automated scientific discovery.
 
-This project introduces a population-based evolutionary framework for refining AI-generated scientific hypotheses. We formalize hypothesis fitness optimization, demonstrate statistically significant improvements under independent biological validation, and provide a reproducible benchmarking pipeline for hypothesis evolution.
+## Code and Reproducibility
 
-More broadly, we show that evolutionary pressure can meaningfully improve AI scientific reasoning beyond single-prompt generation.
+The complete implementation, evaluation scripts, and experimental configurations are available here:
 
----
+GitHub Repository: <https://github.com/JeffersonChen888/HypoEvolve>
+Report: <TODO>
 
-# Broader Implications
+All datasets used are publicly accessible. Random seeds are fixed to ensure reproducibility.
 
-HypoEvolve suggests a shift from prompt engineering toward population-based reasoning systems. Instead of searching for the perfect prompt, systems may benefit from iterative selection and recombination.
+## Acknowledgments
 
-This paradigm extends beyond oncology to other domains requiring mechanistic reasoning, including materials science, climate modeling, and automated scientific discovery.
-
----
-
-# Code and Reproducibility
-
-The full implementation, evaluation scripts, and experimental configurations are available here:
-
-GitHub Repository: [ADD LINK]
-
-All datasets used are publicly available. Random seeds are fixed to ensure reproducibility.
-
----
-
-# Acknowledgments
-
-We thank collaborators and mentors for their guidance and feedback throughout this project.
-
----
+We thank our mentors, Dr. Zhen Wang and Jieyuan Liu, for their guidance and feedback throughout this project.
