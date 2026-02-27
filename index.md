@@ -1,157 +1,51 @@
 ---
 layout: default
+title: HypoEvolve
 ---
 
-{% include mathjax.html %}
+# HypoEvolve
 
-# HypoEvolve: Benchmarking LLM-Generated Biological Hypotheses for Scientific Discovery
+Large language models generate one-shot answers. Scientific discovery requires iteration. HypoEvolve introduces evolutionary refinement into AI hypothesis generation.
 
-Jefferson Chen, Samuel Lee, Jieyuan Liu, Zhiting Hu, Zhen Wang
+---
 
-[jec068@ucsd.edu](mailto:jec068@ucsd.edu)
-[hsl023@ucsd.edu](mailto:hsl023@ucsd.edu)
-[jil029@ucsd.edu](mailto:jil029@ucsd.edu)
-[zhh019@ucsd.edu](mailto:zhh019@ucsd.edu)
-[zhw085@ucsd.edu](mailto:zhw085@ucsd.edu)
+## <span id="problem">The Problem</span>
 
-University of California, San Diego
+AI systems lack iterative refinement. Without comparison or selection, hypotheses remain brittle and prone to hallucination.
 
-## Why This Matters
+---
 
-Scientific discovery depends on generating and refining hypotheses.
-Traditionally, researchers:
+## <span id="method">Method</span>
 
-1. Propose ideas
-2. Critique them
-3. Combine promising mechanisms
-4. Improve them over time
+HypoEvolve maintains a population of hypotheses that evolve over generations.
 
-However, most AI systems today generate **one answer at a time**. They don’t revise, compare, or evolve ideas the way scientists do.
+<div class="section-highlight">
+The system applies structured evaluation, tournament selection, crossover, and mutation.
+</div>
 
-We asked:
+![Framework](/assets/fig_framework.png)
 
-> What if AI could *evolve* hypotheses the way nature evolves organisms?
+---
 
-We proposed **HypoEvolve**, a system that combines large language models (LLMs) with evolutionary algorithms to iteratively refine scientific ideas.
+## <span id="results">Results</span>
 
-## What We Built
+| Method | Excellent Rate | Avg Score |
+|--------|---------------|-----------|
+| Single-pass LLM | 42% | 56.3% |
+| HypoEvolve | 84% | 93.6% |
 
-HypoEvolve is a multi-agent AI system that:
+![Results](/assets/fig_summary.png)
 
-* Generates scientific hypotheses
-* Evaluates them systematically
-* Selects the strongest ideas
-* Combines and mutates them
-* Repeats the process over generations
+---
 
-![framework](/assets/fig_framework.png)
+## <span id="limitations">Limitations</span>
 
-## How It Works (High-Level)
+Fitness partially relies on LLM evaluation. External validation measures gene dependency rather than full mechanistic correctness. Broader domains remain to be tested.
 
-The system has four AI agents:
+---
 
-1. **Generation Agent**
-   Produces diverse hypotheses grounded in literature.
+## <span id="code">Code & Reproducibility</span>
 
-2. **Reflection Agent**
-   Scores ideas for correctness, novelty, and quality.
+GitHub: [Add Link]
 
-3. **Evolution Agent**
-   Combines strong ideas (crossover) and introduces variations (mutation).
-
-4. **Supervisor Agent**
-   Manages selection and preserves the best hypotheses.
-
-The process repeats across generations, steadily improving hypothesis quality.
-
-### Optimization Objective
-
-We search for:
-
-$h* = argmax f(h)$
-
-Where hypothesis quality is:
-
-$f(h) = w_c s_c + w_n s_n + w_q s_q$
-
-* $s_c$: correctness
-* $s_n$: novelty
-* $s_q$: quality
-* weights emphasize novelty and overall quality
-
-### Evolution Loop
-
-For each generation:
-
-1. Structured peer review
-2. Tournament selection
-3. Crossover of parent hypotheses
-4. Mutation (simplification or out-of-box reasoning)
-5. Elitism-based replacement
-
-### Evaluation
-
-External validation uses:
-
-* DepMap CRISPR gene dependency scores
-* Threshold for “Excellent” ≥ 0.9
-
-DepMap data is never used during evolution.
-
-## Application: Drug Repurposing for Cancer
-
-To test our system, we applied it to a real biomedical task:
-
-> Given a cancer type, can AI propose an FDA-approved drug that might work and explain why?
-
-The system:
-
-* Proposes a drug
-* Explains the biological mechanism
-* Predicts relevance to disease biology
-
-We evaluated results using **DepMap CRISPR knockout data**, an independent biological dataset that was *never shown* to the AI during training or evolution.
-
-## Results
-
-| Method          | Excellent Rate | Avg Score |
-| --------------- | -------------- | ----------|
-| Single-pass LLM | 42%            | 56.3%     |
-| **HypoEvolve**  | **84%**        | **93.6%** |
-
-Key findings:
-
-* Excellent predictions doubled
-* Validation scores increased dramatically
-* Improvements were statistically significant (p < 0.00001)
-* Gains generalized across 31 cancer types
-
-![results](/assets/fig_summary.png)
-
-In addition, the figure below indicates that internal LLM-evaluated fitness improves consistently across generations. The strongest gains occur in early generations, with elitism preserving high-quality hypotheses while mutation maintains diversity.
-
-![learning_curve](/assets/fig_learning_curve.png)
-
-## Discussion
-
-This work suggests:
-
-* Iterative refinement improves AI scientific reasoning
-* Evolutionary search helps avoid one-shot hallucinations
-* Population-based optimization can meaningfully guide hypothesis discovery
-
-More broadly, AI systems may benefit from evolutionary pressure rather than relying solely on single prompts.
-
-This framework could extend to:
-
-* Biomedical discovery
-* Materials science
-* Climate modeling
-* Mechanistic reasoning tasks
-
-## Future Directions
-
-* Integrate knowledge graphs into evolution
-* Improve fitness evaluation beyond LLM scoring
-* Apply to broader disease domains
-* Incorporate experimental feedback loops
+All datasets are publicly available.
