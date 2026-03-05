@@ -12,145 +12,167 @@ layout: default
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# HypoEvolve: Benchmarking LLM-Generated Biological Hypotheses for Scientific Discovery
+# Benchmarking LLM-Generated Biological Hypotheses for Scientific Discovery
 
 Jefferson Chen, Samuel Lee, Jieyuan Liu, Zhiting Hu, Zhen Wang  
 University of California, San Diego  
 
-[jec068@ucsd.edu](mailto:jec068@ucsd.edu)  
-[hsl023@ucsd.edu](mailto:hsl023@ucsd.edu)  
-[jil029@ucsd.edu](mailto:jil029@ucsd.edu)  
-[zhh019@ucsd.edu](mailto:zhh019@ucsd.edu)  
-[zhw085@ucsd.edu](mailto:zhw085@ucsd.edu)  
+[jec068@ucsd.edu](mailto:jec068@ucsd.edu) ·
+[hsl023@ucsd.edu](mailto:hsl023@ucsd.edu) ·
+[jil029@ucsd.edu](mailto:jil029@ucsd.edu) ·
+[zhh019@ucsd.edu](mailto:zhh019@ucsd.edu) ·
+[zhw085@ucsd.edu](mailto:zhw085@ucsd.edu)
+
+## Elevator pitch
+
+**HypoEvolve** is a multi-agent evolutionary system that refines LLM-generated biomedical hypotheses using **selection, crossover, and mutation** (genetic algorithms).  
+We show that evolutionary refinement yields **substantial gains under external biological validation** on **drug repurposing** (DepMap CRISPR dependency) and improves performance on **Type 2 Diabetes (T2D) gene discovery**.
+
+**Target audience / stakeholder:** computational biology researchers, ML-for-science practitioners, and reviewers who need a systematic way to **improve** (not just generate) mechanistic hypotheses.
+
+## Project resources (quick links)
+
+- **GitHub repo:** <https://github.com/JeffersonChen888/HypoEvolve>
+- **Poster (PDF):** /assets/DSC180B_Poster.pdf  <!-- update filename/path -->
+- **Final report:** /assets/final_report.pdf      <!-- update filename/path -->
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-  - [Why This Matters](#why-this-matters)
-  - [What We Built](#what-we-built)
-  - [Scope and Boundaries](#scope-and-boundaries)
+- [Key results](#key-results)
+- [Problem & scope](#problem--scope)
 - [Methods](#methods)
-  - [Optimization Objective](#optimization-objective)
-  - [Application: Drug Repurposing for Cancer](#application-drug-repurposing-for-cancer)
-  - [External Validation Using DepMap](#external-validation-using-depmap)
-- [Results](#results)
-  - [Interpreting the Results](#interpreting-the-results)
-  - [What Changes Across Generations?](#what-changes-across-generations)
-- [Discussion](#discussion)
-  - [Limitations](#limitations)
-  - [Contributions](#contributions)
-  - [Broader Implications](#broader-implications)
-- [Code and Reproducibility](#code-and-reproducibility)
-- [Acknowledgments](#acknowledgments)
+- [Experiments & data](#experiments--data)
+- [Interpretation](#interpretation)
+- [Limitations & next steps](#limitations--next-steps)
+- [References](#references)
 
-## Introduction
+## Key results
 
-### Why This Matters
+![External validation summary across cancer types](/assets/fig_summary.png)
+*Figure 1. External validation comparison between single-pass prompting and HypoEvolve (drug repurposing).*
 
-Biological discovery relies on forming hypotheses. Scientists read literature, piece together scattered information, and suggest testable mechanisms. However, the amount of scientific publications has exceeded what any person can handle. Large language models (LLMs) have recently shown impressive abilities in scientific reasoning and understanding literature. However, most current AI systems do not follow this approach. They provide a single response and stop. This one-time output limits reliability. Even if the results seem valid, they may lack biological grounding. Without comparison, revision, or selection, there is no way to improve.
+**What we found:**
 
-Therefore, we ask a simple question: what if AI could evolve hypotheses like biological systems evolve organisms? To address this question, we propose **HypoEvolve**, a simplified evolutionary sys-
-tem inspired by classical genetic algorithms (GAs).
+- **Evolutionary refinement improves externally validated hypothesis quality** versus single-pass prompting.
+- Gains appear **across many cancer types**, indicating robustness.
+- Improvements are achieved **without DepMap leakage** (DepMap is not used during generation/scoring—only for external evaluation).
 
-### What We Built
+![Learning curve showing fitness across generations](/assets/fig_learning_curve.png)
+*Figure 2. Learning curve showing LLM-evaluated fitness improving and stabilizing across generations (drug repurposing).*
 
-We created a multi-agent evolutionary framework for refining hypotheses. The system generates a group of literature-based hypotheses, assesses their quality, and applies evolutionary processes to improve them across generations.
+## Problem & scope
 
-![framework](/assets/fig_framework.png)
-*Figure 1. Framework overview of the multi-agent evolutionary hypothesis refinement process.*
+### Problem
 
-The framework includes four interacting agents. A Generation Agent suggests diverse candidate hypotheses. A Reflection Agent checks each hypothesis for biological accuracy, novelty, and explanatory quality. An Evolution Agent mixes and mutates ideas, combining strong concepts and adding variety. Finally, a Supervisor Agent oversees tournament selection and elitism, making sure that the best hypotheses carry on through generations.
+Single-pass LLM prompting produces **one** hypothesis with **no systematic refinement**. Unlike researchers, LLM workflows typically lack **selection pressure** to preserve strong ideas and revise weak ones.
 
-This process works iteratively, allowing the population to improve over time instead of relying on one attempt.
+### Scope boundaries
 
-### Scope and Boundaries
+**We do:**
 
-This project focuses on testing evolutionary refinement for AI-generated biomedical hypotheses. We use crossover and mutation processes, structured multi-agent evaluation, and external validation with an independent biological dataset. We assess performance on a drug repurposing task across 31 cancer types. We do not perform wet-lab validation, fine-tune base models, or claim readiness for clinical use. Our goal is to investigate whether evolutionary pressure enhances AI hypothesis quality.
+- Treat hypothesis refinement as **evolutionary optimization** (selection + crossover + mutation).
+- Evaluate on two tasks:
+  1) **Drug repurposing** with external validation using **DepMap CRISPR dependency**  
+  2) **Type 2 Diabetes (T2D) gene discovery** comparisons
+
+**We do not:**
+
+- Conduct wet-lab validation or claim clinical readiness.
+- Fine-tune foundation models.
 
 ## Methods
 
-### Optimization Objective
+### System overview
 
-We define the hypothesis search as:
+HypoEvolve is a **multi-agent GA-style loop**:
 
-$h^* = \arg\max_h f(h)$
+- **Generation Agent:** proposes a population of candidate hypotheses  
+- **Reflection Agent:** performs structured review and assigns component scores  
+- **Evolution Agent:** produces offspring via recombination and mutation  
+- **Supervisor Agent:** runs tournament selection + elitism and advances the population
 
-where fitness is defined as:
+![HypoEvolve framework](/assets/fig_framework.png)
+*Figure 3. Multi-agent evolutionary loop used to iteratively refine hypotheses.*
 
-$f(h) = w_c s_c + w_n s_n + w_q s_q$
+### Evolutionary cycle per generation
 
-Here, $s_c$ measures biological accuracy, $s_n$ measures novelty, and $s_q$ measures explanatory quality. The weighting prioritizes novelty and robustness while keeping biological plausibility.
+Each generation follows:
 
-Over generations, hypotheses with better fitness are more likely to survive and be combined.
+1. **Review**: generate component scores  
+2. **Selection**: tournament selection + **elitism**  
+3. **Crossover**: recombine mechanistic reasoning  
+4. **Mutation**: controlled semantic edits
 
-### Application: Drug Repurposing for Cancer
+### Objective
 
-To test the framework, we apply it to a real biomedical task: given a cancer type, suggest an FDA-approved drug and provide a mechanistic explanation for its potential effectiveness.
+We define hypothesis search as:
 
-Each hypothesis includes a drug, a target pathway or gene, and a structured biological rationale. The system does not receive outcome labels during evolution.
+$$
+h^* = \arg\max_h f(h)
+$$
 
-### External Validation Using DepMap
+where fitness is:
 
-We assess hypotheses using CRISPR gene dependency data from the Broad Institute’s DepMap project. For each proposed mechanism, we check if the implicated gene shows strong dependency in the relevant cancer context.
+$$
+f(h) = w_c s_c + w_n s_n + w_q s_q
+$$
 
-A hypothesis is classified as “Excellent” if its validation score exceeds 0.9. Importantly, we do not use DepMap data during hypothesis generation or scoring. It is only for external evaluation, preventing data leakage. This ensures that improvements reflect true generalization instead of overfitting.
+- $s_c$: **correctness** (biological plausibility)  
+- $s_n$: **novelty** (non-trivial / less redundant mechanisms)  
+- $s_q$: **quality** (clarity + explanatory strength)
 
-## Results
+Weights balance novelty and quality while maintaining correctness.
 
-![summary](/assets/fig_summary.png)
+## Experiments & data
 
-*Figure 2. Comparison between single-pass LLM and HypoEvolve across 31 cancer types.*
+### Task 1: Drug repurposing (oncology)
 
-HypoEvolve doubles the rate of externally validated excellent predictions and significantly increases average validation scores. The improvement is statistically meaningful (p < 0.00001) and consistent across all 31 cancer types.
+Given a cancer type, the system proposes:
 
-The learning curve below shows that internal fitness increases quickly during early generations and stabilizes as high-quality hypotheses are preserved through elitism.
+- an FDA-approved drug
+- a pathway / target gene
+- a mechanistic rationale
 
-![learning_curve](/assets/fig_learning_curve.png)
+**External validation dataset: DepMap CRISPR dependency.**  
+DepMap aggregates genome-scale CRISPR knockout screens across many cancer cell lines. Dependency scores indicate whether a gene is essential for cell survival in a given context. We use DepMap **only after** hypotheses are generated to measure whether implicated genes show strong dependency in the relevant cancer setting (external validation).
 
-*Figure 3. Learning curve showing hypothesis fitness improvement across generations.*
+**Leakage control:** DepMap is not used in internal scoring or during evolution—only for post-hoc evaluation.
 
-### Interpreting the Results
+### Task 2: Type 2 Diabetes (T2D) gene discovery
 
-The increase in the Excellent Rate suggests better biological alignment with independent gene dependency data. Early generations remove weak or biologically inconsistent mechanisms, while later generations refine and stabilize high-performing hypotheses.
+We also evaluate HypoEvolve on identifying **T2D-associated genes**, comparing performance across different LLM backbones (as in the poster).
 
-Since evaluation data is not used during evolution, performance gains reflect improved hypothesis structure rather than memorization.
+![T2D results comparison](/assets/t2d_valid.png)  <!-- update to your actual asset filename -->
+*Figure 4. T2D results: single-pass vs HypoEvolve across different LLMs.*
 
-### What Changes Across Generations?
+## Interpretation
 
-Evolution mainly enhances three properties. First, biologically inconsistent explanations are quickly eliminated. Second, crossover introduces reasoning between pathways that single-pass outputs miss. Third, mutation simplifies overly complex mechanisms, often improving plausibility. Together, these processes lower the risk of errors and improve consistency.
+**What changed across generations (qualitative):**
 
-## Discussion
+- Biologically inconsistent explanations are filtered out early by selection pressure.
+- Crossover can combine partial mechanisms into more coherent rationales.
+- Mutation often simplifies or repairs brittle reasoning chains.
 
-### Contributions
+**What to trust vs. what to be cautious about:**
 
-This project presents a population-based evolutionary framework for refining AI-generated scientific hypotheses. We define hypothesis fitness optimization, demonstrate statistically significant improvements with independent biological validation, and provide a reproducible benchmarking process for hypothesis evolution.
+- External validation improvements (DepMap) are meaningful because they are evaluated out-of-loop.
+- Internal fitness (LLM-based) is useful for steering evolution, but should be treated as a heuristic, not ground truth.
 
-More broadly, we show that evolutionary pressure can significantly enhance AI scientific reasoning beyond single-prompt generation.
-
-### Broader Implications
-
-HypoEvolve indicates a shift from prompt engineering to population-based reasoning systems. Rather than searching for the ideal prompt, systems might benefit from iterative selection and recombination.
-
-This approach applies beyond oncology to other fields needing mechanistic reasoning, including materials science, climate modeling, and automated scientific discovery.
+## Limitations & next steps
 
 ### Limitations
 
-Fitness evaluation relies partly on LLM-based scoring, which may introduce bias. DepMap measures gene dependency rather than full mechanistic correctness, so validation is inherently indirect. The depth of evolution is limited by computational resources, and biological novelty is hard to measure objectively. Additionally, our experiments focus solely on oncology; other fields still need testing.
+- Internal scoring relies on LLM judgments; calibration and human review would strengthen credibility.
+- DepMap measures gene dependency, which is an indirect proxy for full mechanistic correctness.
+- Compute limits constrain population size and generation depth.
 
-Future improvements may include using structured biomedical knowledge graphs and incorporating experimental feedback loops.
+### Next steps
 
-## Artifacts
+- Run **ablations**: remove crossover, remove mutation, remove elitism.
+- Add additional discovery tasks beyond oncology and T2D.
+- Incorporate structured biological knowledge (e.g., knowledge graphs) to constrain mutations and improve grounding.
 
-The complete implementation, evaluation scripts, and experimental configurations are available here:
+## References
 
-GitHub Repository: <https://github.com/JeffersonChen888/HypoEvolve>
-
-Report: <TODO>
-
-Poster: <TODO>
-
-All datasets used are publicly accessible. Random seeds are fixed to ensure reproducibility.
-
-## Acknowledgments
-
-We thank our mentors for their guidance and feedback throughout this project.
+[1] Annu Lambora, Kunal Gupta, and Kriti Chopra. *Genetic algorithm — a literature review.*  
+In 2019 International Conference on Machine Learning, Big Data, Cloud and Parallel Computing (COMITCon), pp. 380–384. IEEE, 2019.
