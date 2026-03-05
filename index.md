@@ -107,15 +107,11 @@ Each generation follows:
 
 We define hypothesis search as:
 
-$$
-h^* = \arg\max_h f(h)
-$$
+$h^* = \arg\max_h f(h)$
 
 where fitness is:
 
-$$
-f(h) = w_c s_c + w_n s_n + w_q s_q
-$$
+$f(h) = w_c s_c + w_n s_n + w_q s_q$
 
 - $s_c$: **correctness** (biological plausibility)  
 - $s_n$: **novelty** (non-trivial / less redundant mechanisms)  
