@@ -33,8 +33,8 @@ We show that evolutionary refinement yields **substantial gains under external b
 ## Project resources (quick links)
 
 - **GitHub repo:** <https://github.com/JeffersonChen888/HypoEvolve>
-- **Poster (PDF):** /assets/DSC180B_Poster.pdf  <!-- update filename/path -->
-- **Final report:** /assets/final_report.pdf      <!-- update filename/path -->
+- **Postal (PDF):** [https://drive.google.com/file/d/1jCgbqp21dvVsrzsLfzA9gf32aaDAURsr/view?usp=sharing](https://drive.google.com/file/d/1jCgbqp21dvVsrzsLfzA9gf32aaDAURsr/view?usp=sharing)
+- **Final report:** [https://drive.google.com/file/d/1VlOpv-IeNF-nmLtqVthjJpcdaTL48wv5/view?usp=sharing](https://drive.google.com/file/d/1VlOpv-IeNF-nmLtqVthjJpcdaTL48wv5/view?usp=sharing)
 
 ## Table of Contents
 
